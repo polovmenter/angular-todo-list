@@ -1,0 +1,13 @@
+<div class="task__header">
+    <h2 class="task__title">{{ task.title }}</h2>
+    <ul class="task__interactions">
+        <li class="task__interaction"><input type="checkbox" (change)="onToggle()" [checked]="task.completed"></li>
+        <li class="task__interaction"><button (click)="onDelete()">Delete</button></li>
+    </ul>
+</div>
+@if (this.task.description) {
+    <div class="task__description">{{ task.description }}</div>
+}
+<div class="task__footer">
+    <span>{{ task.dateOfCreation | date: 'dd MMM yyyy HH:mm'}}</span>
+</div>
